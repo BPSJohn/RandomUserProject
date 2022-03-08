@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.example.random.random.user.R
 import com.example.random.random.user.databinding.MainFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,6 +30,18 @@ class MainFragment : Fragment() {
         binding.mainRecyclerView.adapter = MainAdapter()
 
         binding.mainRecyclerView.setHasFixedSize(true)
+
+        binding.mainUserBackground.setOnClickListener { v : View ->
+            viewModel.randomUserFeed.value?.results?.get(0)?.let {
+                v.findNavController()
+                    .navigate(
+                        MainFragmentDirections
+                            .actionMainFragmentToDetailsFragment(
+                                it
+                            )
+                    )
+            }
+        }
 
         return binding.root
     }
