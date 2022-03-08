@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.example.random.random.user.data.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/item_user_title_firstname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:title="@{user.name.title}"
+            app:firstName="@{user.name.first}"
+            app:lastName="@{user.name.last}"
+            tools:text="Mr. Bob Ross"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_user_lastname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:email="@{user.email}"
+            app:layout_constraintEnd_toEndOf="@+id/item_user_title_firstname"
+            app:layout_constraintStart_toStartOf="@+id/item_user_title_firstname"
+            app:layout_constraintTop_toBottomOf="@+id/item_user_title_firstname"
+            tools:text="Bob@Ross.com" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

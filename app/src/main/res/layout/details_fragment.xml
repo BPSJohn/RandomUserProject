@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.random.random.user.ui.details.DetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.details.DetailsFragment">
+
+
+        <ImageView
+            android:id="@+id/details_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:scaleType="fitXY"
+            app:imageUrl="@{viewModel.user.picture.large}"
+            app:layout_constraintDimensionRatio="4:5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/details_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:fullTitle="@{viewModel.user.name.title}"
+            app:fullFirstName="@{viewModel.user.name.first}"
+            app:fullLastName="@{viewModel.user.name.last}"
+            tools:text="Name: Mr. Bob Ross"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/details_image"
+            app:layout_constraintStart_toStartOf="@+id/details_image"
+            app:layout_constraintTop_toBottomOf="@+id/details_image" />
+
+        <TextView
+            android:id="@+id/details_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:email="@{viewModel.user.email}"
+            tools:text="Email: Bob@Ross.com"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/details_name"
+            app:layout_constraintStart_toStartOf="@+id/details_name"
+            app:layout_constraintTop_toBottomOf="@+id/details_name" />
+
+        <TextView
+            android:id="@+id/details_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:age="@{viewModel.user.dob.age}"
+            tools:text="Age: 50"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/details_email"
+            app:layout_constraintStart_toStartOf="@+id/details_email"
+            app:layout_constraintTop_toBottomOf="@+id/details_email" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
