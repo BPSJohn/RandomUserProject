@@ -19,20 +19,4 @@ data class User(
   @SerializedName("picture"    ) var picture    : Picture?    = Picture(),
   @SerializedName("nat"        ) var nat        : String?     = null
 ) : Parcelable
-//{
 
-  // TODO (2 point): Add tests
-//  companion object {
-//    fun createRandom(): User {
-//      return User(
-//        name = Name(first = randomString(), last = randomString()),
-//        location = Location(coordinates = Coordinates(randomDouble().toString(), randomDouble().toString())),
-//        email = randomString() + "@gmail.com",
-//        dob = Dob(age = 25)
-//      )
-//    }
-//
-//    private fun randomString() = UUID.randomUUID().toString().take(6)
-//    private fun randomDouble() = Random().nextDouble() * 100
-//  }
-//}

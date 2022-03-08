@@ -1,6 +1,7 @@
 package com.example.random.random.user.di
 
 import com.example.random.random.user.data.remote.retrofit.RetrofitFactory
+import com.example.random.random.user.ui.location.DistanceHelper
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -21,9 +22,4 @@ object AppModule {
     @Provides
     fun provideRetrofitFactory() = RetrofitFactory
 
-    @Singleton
-    @Provides
-    fun provideGson() : Gson {
-        return Gson()
-    }
 }

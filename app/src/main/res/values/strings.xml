@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">RandomUser</string>
+    <string name="profile_desc">Profile picture of an user.</string>
+    <string name="white_background">Invisible background to help the application.</string>
+    <string name="refresh_random_user">Refresh Random User</string>
+    <string name="show_10_users">Show 10 Users</string>
+    <string name="calculate_distance">Calculate distance</string>
+    <string name="location_of_this_phone">Location of this phone:</string>
+    <string name="location_of_random_user">Location of random user:</string>
+    <string name="x_miles">0.0 kilometers</string>
+    <string name="calculate_distance_from_current_location">Calculate distance from current location</string>
 </resources>
