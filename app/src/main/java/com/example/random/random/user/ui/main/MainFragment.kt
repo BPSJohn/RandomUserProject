@@ -43,6 +43,14 @@ class MainFragment : Fragment() {
             }
         }
 
+        binding.mainRefreshUserButton.setOnClickListener {
+            viewModel.getUser()
+        }
+
+        binding.mainRefresh10UsersButton.setOnClickListener {
+            viewModel.getUsers()
+        }
+
         return binding.root
     }
 

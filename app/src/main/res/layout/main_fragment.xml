@@ -43,19 +43,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            app:fullTitle="@{viewModel.randomUserFeed.results.get(0).name.title}"
-            app:fullFirstName="@{viewModel.randomUserFeed.results.get(0).name.first}"
-            app:fullLastName="@{viewModel.randomUserFeed.results.get(0).name.last}"
-            tools:text="Name: Bob Ross"
+            android:layout_marginTop="35dp"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/main_user_image"
+            app:fullFirstName="@{viewModel.randomUserFeed.results.get(0).name.first}"
+            app:fullLastName="@{viewModel.randomUserFeed.results.get(0).name.last}"
+            app:fullTitle="@{viewModel.randomUserFeed.results.get(0).name.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/main_user_image"
-            app:layout_constraintTop_toTopOf="@+id/main_user_image"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Name: Bob Ross" />
 
         <TextView
             android:id="@+id/main_user_email"
@@ -74,18 +72,40 @@
             android:id="@+id/main_recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_user_image"
             android:layout_gravity="center_horizontal"
             android:clipToPadding="false"
             android:layoutDirection="locale"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_refresh_10_users_button"
             app:listUsers="@{viewModel.randomUsersFeed.results}"
-            tools:listitem="@layout/list_item_user"/>
+            tools:listitem="@layout/list_item_user" />
+
+        <Button
+            android:id="@+id/main_refresh_user_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="30dp"
+            android:text="Refresh Random User"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_user_email" />
+
+        <Button
+            android:id="@+id/main_refresh_10_users_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Show 10 Users"
+            app:layout_constraintEnd_toEndOf="@+id/main_refresh_user_button"
+            app:layout_constraintStart_toStartOf="@+id/main_refresh_user_button"
+            app:layout_constraintTop_toBottomOf="@+id/main_refresh_user_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
