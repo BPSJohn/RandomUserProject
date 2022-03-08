@@ -35,7 +35,8 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<User>?) {
 @BindingAdapter(value = ["fullTitle", "fullFirstName", "fullLastName"])
 fun bindFullName(textView: TextView, title: String?, firstName: String?, lastName: String?)
 {
-    var fullName = ""
+    var fullName: String
+
     if(title != null && firstName != null && lastName != null)
     {
         fullName = "<b>Name: </b>$title. $firstName $lastName"
@@ -118,5 +119,20 @@ fun bindAge(textView: TextView, age: String?)
     } ?: run {
         val noAge = "User has no age"
         textView.text = noAge
+    }
+}
+
+@BindingAdapter("latitude", "longitude")
+fun bindLocation(textView: TextView, latitude: String?, longitude: String?)
+{
+    var location : String
+    if(latitude != null && longitude != null)
+    {
+        location = "<b>Location: </b> ($latitude, $longitude)"
+        textView.text = Html.fromHtml(location.replace("\\n", "<br>"))
+    }
+    else{
+        location = "User has no location."
+        textView.text = location
     }
 }
