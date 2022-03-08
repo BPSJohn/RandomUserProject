@@ -1,5 +1,6 @@
 package com.example.random.random.user.ui.main
 
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,20 +9,41 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
+import androidx.security.crypto.MasterKeys
 import com.example.random.random.user.R
+import com.example.random.random.user.data.model.RandomUserResult
 import com.example.random.random.user.databinding.MainFragmentBinding
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
 
+    lateinit var sharedPreferences: SharedPreferences
+
+    lateinit var masterKey: String
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding = MainFragmentBinding.inflate(inflater)
+
+        masterKey = MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+
+        sharedPreferences = EncryptedSharedPreferences.create(
+            "StoredUser",
+            masterKey,
+            requireContext(),
+            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+        )
 
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -54,9 +76,38 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        val jsonObject = sharedPreferences.getString("saved-user", "")
+
+        Timber.d("jsonObject is $jsonObject")
+
+        val gson = Gson()
+
+        val savedUser = gson.fromJson(jsonObject, RandomUserResult::class.java)
+
+        viewModel.updateUser(savedUser)
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        val myEdit = sharedPreferences.edit()
+
+        val gson = Gson()
+
+        val jsonObject = gson.toJson(viewModel.saveUser())
+
+        Timber.d("User is $jsonObject")
+
+        myEdit.putString("saved-user", jsonObject)
+        myEdit.apply()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getUser()
-        viewModel.getUsers()
+        //viewModel.getUser()
+        //viewModel.getUsers()
     }
 }

@@ -60,6 +60,8 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha03'
+
     //Room database
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")

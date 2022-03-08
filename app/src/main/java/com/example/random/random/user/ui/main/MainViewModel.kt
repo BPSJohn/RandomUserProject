@@ -3,6 +3,7 @@ package com.example.random.random.user.ui.main
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.random.random.user.data.model.RandomUserResult
+import com.example.random.random.user.data.model.User
 import com.example.random.random.user.data.remote.networkmodel.ServiceResult
 import com.example.random.random.user.data.remote.repo.RandomUserRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -68,5 +69,20 @@ class MainViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun updateUser(user: RandomUserResult?) {
+        _randomUserFeed.value = user
+    }
+
+    fun saveUser() : RandomUserResult? {
+        _randomUserFeed.value?.results?.get(0)?.login?.uuid = ""
+        _randomUserFeed.value?.results?.get(0)?.login?.password = ""
+        _randomUserFeed.value?.results?.get(0)?.login?.salt = ""
+        _randomUserFeed.value?.results?.get(0)?.login?.md5 = ""
+        _randomUserFeed.value?.results?.get(0)?.login?.sha1 = ""
+        _randomUserFeed.value?.results?.get(0)?.login?.sha256 = ""
+
+        return _randomUserFeed.value
     }
 }
