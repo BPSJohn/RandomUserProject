@@ -5,6 +5,7 @@ import com.example.random.random.user.data.remote.endpoint.RandomUserEndPoints
 import com.example.random.random.user.data.remote.networkmodel.ServiceResult
 import io.mockk.every
 import io.mockk.mockk
+import retrofit2.Response
 
 object TestCall {
     fun createSuccessfulTestCallUserResponse(): ServiceResult.Success<RandomUserResult?> {
@@ -40,6 +41,26 @@ object TestCall {
                    every { longitude } returns "-25.25"
                }
            }
+        }
+    }
+
+    fun createResponseTestCallRandomUserResult(): Response<RandomUserResult> {
+        return mockk<Response<RandomUserResult>>(relaxed = true) {
+            every { isSuccessful } returns true
+            every { body() } returns
+                    mockk<RandomUserResult>() {
+                        every { results } returns
+                                listOf(
+                                    mockk<User>() {
+                                        every { name } returns mockk<Name>() {
+                                            every { title } returns "Mr."
+                                            every { first } returns "Bob"
+                                            every { last } returns "Ross"
+                                        }
+                                        every { email } returns "Bob@Ross.com"
+                                    }
+                                )
+                    }
         }
     }
 }
