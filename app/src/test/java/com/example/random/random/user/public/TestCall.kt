@@ -1,8 +1,7 @@
 package com.example.random.random.user.public
 
-import com.example.random.random.user.data.model.*
-import com.example.random.random.user.data.remote.endpoint.RandomUserEndPoints
-import com.example.random.random.user.data.remote.networkmodel.ServiceResult
+import com.example.random.random.user.network.data.*
+import com.example.random.random.user.network.networkmodel.ServiceResult
 import io.mockk.every
 import io.mockk.mockk
 import retrofit2.Response

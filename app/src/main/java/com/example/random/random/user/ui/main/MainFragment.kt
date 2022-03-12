@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
-import com.example.random.random.user.data.model.RandomUserResult
+import com.example.random.random.user.network.data.RandomUserResult
 import com.example.random.random.user.databinding.MainFragmentBinding
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint

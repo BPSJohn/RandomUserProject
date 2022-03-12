@@ -1,8 +1,6 @@
 package com.example.random.random.user.di
 
-import com.example.random.random.user.data.remote.retrofit.RetrofitFactory
-import com.example.random.random.user.ui.location.DistanceHelper
-import com.google.gson.Gson
+import com.example.random.random.user.network.retrofit.RetrofitFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

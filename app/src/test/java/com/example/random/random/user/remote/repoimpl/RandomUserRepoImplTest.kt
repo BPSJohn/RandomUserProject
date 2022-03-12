@@ -1,24 +1,21 @@
 package com.example.random.random.user.remote.repoimpl
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.random.random.user.data.remote.endpoint.RandomUserEndPoints
-import com.example.random.random.user.data.remote.repoimpl.RandomUserRepoImpl
+import com.example.random.random.user.network.endpoint.RandomUserEndPoints
+import com.example.random.random.user.network.repoimpl.RandomUserRepoImpl
 import com.example.random.random.user.public.TestCall
 import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.unmockkAll
-import io.mockk.verify
 import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.*
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import kotlin.coroutines.CoroutineContext
 
 @ExperimentalCoroutinesApi
 class RandomUserRepoImplTest {

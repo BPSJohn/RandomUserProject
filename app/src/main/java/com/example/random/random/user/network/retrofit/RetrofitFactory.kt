@@ -1,4 +1,4 @@
-package com.example.random.random.user.data.remote.retrofit
+package com.example.random.random.user.network.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -2,7 +2,7 @@ package com.example.random.random.user.ui.main
 
 import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.random.random.user.data.remote.repoimpl.RandomUserRepoImpl
+import com.example.random.random.user.network.repoimpl.RandomUserRepoImpl
 import com.example.random.random.user.public.TestCall
 import io.mockk.coEvery
 import io.mockk.mockk

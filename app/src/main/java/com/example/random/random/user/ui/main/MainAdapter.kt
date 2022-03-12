@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.random.random.user.data.model.User
+import com.example.random.random.user.network.data.User
 import com.example.random.random.user.databinding.ListItemUserBinding
 
 class MainAdapter : ListAdapter<User, MainAdapter.ViewHolder>(DiffCallback) {

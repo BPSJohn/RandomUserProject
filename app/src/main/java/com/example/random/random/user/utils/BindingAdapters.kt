@@ -8,7 +8,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.example.random.random.user.data.model.User
+import com.example.random.random.user.network.data.User
 import com.example.random.random.user.ui.main.MainAdapter
 
 @BindingAdapter("imageUrl")

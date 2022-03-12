@@ -5,7 +5,7 @@
     <data>
         <variable
             name="user"
-            type="com.example.random.random.user.data.model.User" />
+            type="com.example.random.random.user.network.data.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

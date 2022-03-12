@@ -21,7 +21,7 @@
         tools:layout="@layout/details_fragment" >
         <argument
             android:name="user"
-            app:argType="com.example.random.random.user.data.model.User" />
+            app:argType="com.example.random.random.user.network.data.User" />
         <action
             android:id="@+id/action_detailsFragment_to_locationFragment"
             app:destination="@id/locationFragment" />
@@ -32,7 +32,7 @@
         android:label="LocationFragment" >
         <argument
             android:name="user"
-            app:argType="com.example.random.random.user.data.model.User" />
+            app:argType="com.example.random.random.user.network.data.User" />
         <action
             android:id="@+id/action_locationFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />

@@ -1,6 +1,6 @@
-package com.example.random.random.user.data.remote.endpoint
+package com.example.random.random.user.network.endpoint
 
-import com.example.random.random.user.data.model.RandomUserResult
+import com.example.random.random.user.network.data.RandomUserResult
 import retrofit2.Response
 import retrofit2.http.GET
 

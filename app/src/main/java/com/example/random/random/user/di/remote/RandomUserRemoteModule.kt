@@ -1,10 +1,9 @@
 package com.example.random.random.user.di.remote
 
-import com.example.random.random.user.data.remote.endpoint.RandomUserEndPoints
-import com.example.random.random.user.data.remote.repo.RandomUserRepo
-import com.example.random.random.user.data.remote.repoimpl.RandomUserRepoImpl
-import com.example.random.random.user.data.remote.retrofit.RetrofitFactory
-import com.example.random.random.user.ui.location.DistanceHelper
+import com.example.random.random.user.network.endpoint.RandomUserEndPoints
+import com.example.random.random.user.network.repo.RandomUserRepo
+import com.example.random.random.user.network.repoimpl.RandomUserRepoImpl
+import com.example.random.random.user.network.retrofit.RetrofitFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,5 +1,5 @@
 
-package com.example.random.random.user.data.model
+package com.example.random.random.user.network.data
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

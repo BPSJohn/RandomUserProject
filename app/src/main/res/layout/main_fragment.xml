@@ -6,10 +6,10 @@
     <data>
         <variable
             name="user"
-            type="com.example.random.random.user.data.model.User" />
+            type="com.example.random.random.user.network.data.User" />
         <variable
             name="users"
-            type="com.example.random.random.user.data.model.RandomUserResult" />
+            type="com.example.random.random.user.network.data.RandomUserResult" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

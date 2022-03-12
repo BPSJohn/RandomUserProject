@@ -1,4 +1,4 @@
-package com.example.random.random.user.data.remote.networkmodel
+package com.example.random.random.user.network.networkmodel
 
 sealed class ServiceResult<out R> {
     data class Success<out T>(val data: T) : ServiceResult<T>()

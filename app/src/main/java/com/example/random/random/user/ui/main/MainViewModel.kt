@@ -5,9 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.random.random.user.data.model.RandomUserResult
-import com.example.random.random.user.data.remote.networkmodel.ServiceResult
-import com.example.random.random.user.data.remote.repo.RandomUserRepo
+import com.example.random.random.user.network.data.RandomUserResult
+import com.example.random.random.user.network.networkmodel.ServiceResult
+import com.example.random.random.user.network.repo.RandomUserRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
