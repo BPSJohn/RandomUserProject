@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-            name="viewModel"
-            type="com.example.random.random.user.ui.location.LocationViewModel" />
+            name="user"
+            type="com.example.random.random.user.data.model.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

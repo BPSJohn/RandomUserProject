@@ -29,7 +29,7 @@ class DetailsFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.viewModel = viewModel
+        binding.user = viewModel.user
 
         binding.detailsButton.setOnClickListener { v: View ->
             v.findNavController().navigate(
