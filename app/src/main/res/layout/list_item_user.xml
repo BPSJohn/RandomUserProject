@@ -16,6 +16,7 @@
 
         <TextView
             android:id="@+id/item_user_title_firstname"
+            style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -24,19 +25,16 @@
             app:firstName="@{user.name.first}"
             app:lastName="@{user.name.last}"
             tools:text="Mr. Bob Ross"
-            android:textColor="@color/black"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/item_user_lastname"
+            style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             app:email="@{user.email}"
             app:layout_constraintEnd_toEndOf="@+id/item_user_title_firstname"
             app:layout_constraintStart_toStartOf="@+id/item_user_title_firstname"
