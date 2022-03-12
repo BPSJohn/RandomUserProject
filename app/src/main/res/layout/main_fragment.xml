@@ -5,8 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="viewModel"
-            type="com.example.random.random.user.ui.main.MainViewModel" />
+            name="user"
+            type="com.example.random.random.user.data.model.User" />
+        <variable
+            name="users"
+            type="com.example.random.random.user.data.model.RandomUserResult" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +37,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:scaleType="fitXY"
-            app:imageUrl="@{viewModel.randomUserFeed.results.get(0).picture.large}"
+            app:imageUrl="@{user.picture.large}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/avatars"
@@ -48,9 +51,9 @@
             android:layout_marginTop="35dp"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:fullFirstName="@{viewModel.randomUserFeed.results.get(0).name.first}"
-            app:fullLastName="@{viewModel.randomUserFeed.results.get(0).name.last}"
-            app:fullTitle="@{viewModel.randomUserFeed.results.get(0).name.title}"
+            app:fullFirstName="@{user.name.first}"
+            app:fullLastName="@{user.name.last}"
+            app:fullTitle="@{user.name.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/main_user_image"
@@ -64,7 +67,7 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:email="@{viewModel.randomUserFeed.results.get(0).email}"
+            app:email="@{user.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/main_user_name"
             app:layout_constraintTop_toBottomOf="@+id/main_user_name"
@@ -83,7 +86,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_refresh_10_users_button"
-            app:listUsers="@{viewModel.randomUsersFeed.results}"
+            app:listUsers="@{users.results}"
             tools:listitem="@layout/list_item_user" />
 
         <Button

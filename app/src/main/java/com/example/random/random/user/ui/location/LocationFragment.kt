@@ -61,7 +61,7 @@ class LocationFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.viewModel = viewModel
+        binding.user = viewModel.user
 
         binding.locationRandomUser.text = viewModel.setRandomUserLocation()
 

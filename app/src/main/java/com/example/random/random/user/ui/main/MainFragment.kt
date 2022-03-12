@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.viewModel = viewModel
+        binding.users = viewModel.randomUsersFeed.value
 
         binding.mainRecyclerView.adapter = MainAdapter()
 
@@ -59,6 +59,14 @@ class MainFragment : Fragment() {
                             )
                     )
             }
+        }
+
+        viewModel.randomUserFeed.observe(viewLifecycleOwner) { user ->
+            binding.user = user?.results?.get(0)
+        }
+
+        viewModel.randomUsersFeed.observe(viewLifecycleOwner) { users ->
+            binding.users = users
         }
 
         binding.mainRefreshUserButton.setOnClickListener {
