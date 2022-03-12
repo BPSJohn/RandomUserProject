@@ -45,12 +45,11 @@
 
         <TextView
             android:id="@+id/main_user_name"
+            style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="35dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             app:fullFirstName="@{user.name.first}"
             app:fullLastName="@{user.name.last}"
             app:fullTitle="@{user.name.title}"
@@ -62,11 +61,10 @@
 
         <TextView
             android:id="@+id/main_user_email"
+            style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             app:email="@{user.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/main_user_name"
