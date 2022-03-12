@@ -9,4 +9,10 @@
     <string name="location_of_random_user">Location of random user:</string>
     <string name="x_miles">0.0 kilometers</string>
     <string name="calculate_distance_from_current_location">Calculate distance from current location</string>
+    <string name="tools_text_user_name">Name: Mr. Bob Ross</string>
+    <string name="tools_text_user_email">Email: bob@ross.com</string>
+    <string name="tools_name_only">Mr. Bob Ross</string>
+    <string name="tools_email_only">Bob@Ross.com</string>
+    <string name="tools_user_age">Age: 50</string>
+    <string name="tools_user_location">Location: (33.13, 55.34)</string>
 </resources>

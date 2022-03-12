@@ -19,27 +19,27 @@
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            app:title="@{user.name.title}"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
             app:firstName="@{user.name.first}"
             app:lastName="@{user.name.last}"
-            tools:text="Mr. Bob Ross"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{user.name.title}"
+            tools:text="@string/tools_name_only" />
 
         <TextView
             android:id="@+id/item_user_lastname"
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="@dimen/margin_small"
             app:email="@{user.email}"
             app:layout_constraintEnd_toEndOf="@+id/item_user_title_firstname"
             app:layout_constraintStart_toStartOf="@+id/item_user_title_firstname"
             app:layout_constraintTop_toBottomOf="@+id/item_user_title_firstname"
-            tools:text="Bob@Ross.com" />
+            tools:text="@string/tools_email_only" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 
