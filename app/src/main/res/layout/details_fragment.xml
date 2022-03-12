@@ -19,13 +19,13 @@
             android:id="@+id/details_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_large"
             android:contentDescription="@string/profile_desc"
             android:scaleType="fitXY"
             app:imageUrl="@{user.picture.large}"
-            app:layout_constraintDimensionRatio="4:5"
+            app:layout_constraintDimensionRatio="1:1.2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -36,57 +36,57 @@
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:fullTitle="@{user.name.title}"
+            android:layout_marginTop="@dimen/margin_small"
             app:fullFirstName="@{user.name.first}"
             app:fullLastName="@{user.name.last}"
-            tools:text="Name: Mr. Bob Ross"
+            app:fullTitle="@{user.name.title}"
             app:layout_constraintEnd_toEndOf="@+id/details_image"
             app:layout_constraintStart_toStartOf="@+id/details_image"
-            app:layout_constraintTop_toBottomOf="@+id/details_image" />
+            app:layout_constraintTop_toBottomOf="@+id/details_image"
+            tools:text="@string/tools_text_user_name" />
 
         <TextView
             android:id="@+id/details_email"
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             app:email="@{user.email}"
-            tools:text="Email: Bob@Ross.com"
             app:layout_constraintEnd_toEndOf="@+id/details_name"
             app:layout_constraintStart_toStartOf="@+id/details_name"
-            app:layout_constraintTop_toBottomOf="@+id/details_name" />
+            app:layout_constraintTop_toBottomOf="@+id/details_name"
+            tools:text="@string/tools_text_user_email" />
 
         <TextView
             android:id="@+id/details_age"
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             app:age="@{user.dob.age}"
-            tools:text="Age: 50"
             app:layout_constraintEnd_toEndOf="@+id/details_email"
             app:layout_constraintStart_toStartOf="@+id/details_email"
-            app:layout_constraintTop_toBottomOf="@+id/details_email" />
+            app:layout_constraintTop_toBottomOf="@+id/details_email"
+            tools:text="@string/tools_user_age" />
 
         <TextView
             android:id="@+id/details_location"
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             app:latitude="@{user.location.coordinates.latitude}"
-            app:longitude="@{user.location.coordinates.longitude}"
-            tools:text="Location: (33.13, 55.34)"
             app:layout_constraintEnd_toEndOf="@+id/details_age"
             app:layout_constraintStart_toStartOf="@+id/details_age"
-            app:layout_constraintTop_toBottomOf="@+id/details_age" />
+            app:layout_constraintTop_toBottomOf="@+id/details_age"
+            app:longitude="@{user.location.coordinates.longitude}"
+            tools:text="@string/tools_user_location" />
 
         <Button
             android:id="@+id/details_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             android:text="@string/calculate_distance_from_current_location"
             app:layout_constraintEnd_toEndOf="@+id/details_location"
             app:layout_constraintStart_toStartOf="@+id/details_location"

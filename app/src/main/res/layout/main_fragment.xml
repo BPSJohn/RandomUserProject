@@ -34,8 +34,8 @@
             android:id="@+id/main_user_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_small"
             android:scaleType="fitXY"
             app:imageUrl="@{user.picture.large}"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +48,9 @@
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_small"
             app:fullFirstName="@{user.name.first}"
             app:fullLastName="@{user.name.last}"
             app:fullTitle="@{user.name.title}"
@@ -57,19 +58,19 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/main_user_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Name: Bob Ross" />
+            tools:text="@string/tools_text_user_name" />
 
         <TextView
             android:id="@+id/main_user_email"
             style="@style/TextFont"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/margin_small"
             app:email="@{user.email}"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/main_user_name"
             app:layout_constraintStart_toStartOf="@+id/main_user_name"
             app:layout_constraintTop_toBottomOf="@+id/main_user_name"
-            tools:text="Email: bob@ross.com" />
+            tools:text="@string/tools_text_user_email" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/main_recycler_view"
@@ -91,9 +92,9 @@
             android:id="@+id/main_refresh_user_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="75dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_refresh_user_button"
+            android:layout_marginEnd="@dimen/margin_medium"
             android:text="@string/refresh_random_user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -104,7 +105,7 @@
             android:id="@+id/main_refresh_10_users_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/margin_small"
             android:text="@string/show_10_users"
             app:layout_constraintEnd_toEndOf="@+id/main_refresh_user_button"
             app:layout_constraintStart_toStartOf="@+id/main_refresh_user_button"
