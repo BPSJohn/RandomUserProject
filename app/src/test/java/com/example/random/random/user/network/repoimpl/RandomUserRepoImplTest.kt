@@ -1,4 +1,4 @@
-package com.example.random.random.user.remote.repoimpl
+package com.example.random.random.user.network.repoimpl
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.random.random.user.network.endpoint.RandomUserEndPoints

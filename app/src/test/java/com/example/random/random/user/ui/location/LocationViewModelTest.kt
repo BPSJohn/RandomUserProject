@@ -70,4 +70,26 @@ class LocationViewModelTest {
             "Location of random user: (-25.25, -25.25)", locationViewModelTest.setRandomUserLocation()
         )
     }
+
+    @Test
+    fun locationViewModelShouldReturnUserLocation() = runBlockingTest {
+
+        locationViewModelTest.userLongitude = -25.25
+        locationViewModelTest.userLatitude = -25.25
+
+        assertEquals(
+            "Location of this phone: (-25.25, -25.25)", locationViewModelTest.setUserLocation()
+        )
+    }
+
+    @Test
+    fun locationViewModelShouldReturnDistance() = runBlockingTest {
+        locationViewModelTest.user = TestCall.createUser()
+        locationViewModelTest.userLongitude = 1.0
+        locationViewModelTest.userLatitude = 1.0
+
+        assertEquals(
+            "4061 kilometers", locationViewModelTest.getDistance()
+        )
+    }
 }

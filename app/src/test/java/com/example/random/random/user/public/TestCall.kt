@@ -9,7 +9,7 @@ import retrofit2.Response
 object TestCall {
     fun createSuccessfulTestCallUserResponse(): ServiceResult.Success<RandomUserResult?> {
         return ServiceResult.Success(
-            mockk<RandomUserResult>() {
+            mockk<RandomUserResult>(relaxed = true) {
                 every { results } returns
                         listOf(
                             mockk<User>() {
@@ -26,8 +26,30 @@ object TestCall {
         )
     }
 
+    fun createSuccessfulTestCallUsersResponse() : ServiceResult.Success<RandomUserResult?> {
+        return ServiceResult.Success(
+            mockk<RandomUserResult>(relaxed = true) {
+                every { results } returns
+                        listOf(
+                            mockk<User>() {
+                                every { name } returns mockk<Name>() {
+                                    every { title } returns "Mr."
+                                    every { first } returns "Bob"
+                                    every { last } returns "Ross"
+                                }
+                                every { email } returns "Bob@Ross.com"
+                            },
+                            mockk<User>(relaxed = true),
+                            mockk<User>(relaxed = true),
+                            mockk<User>(relaxed = true),
+                            mockk<User>(relaxed = true)
+                        )
+            }
+        )
+    }
+
     fun createUser(): User {
-       return mockk<User>() {
+       return mockk<User>(relaxed = true) {
             every { name } returns mockk<Name>() {
                 every { title } returns "Mr."
                 every { first } returns "Bob"
@@ -40,6 +62,23 @@ object TestCall {
                    every { longitude } returns "-25.25"
                }
            }
+        }
+    }
+
+    fun createUserResult(): RandomUserResult {
+        return mockk<RandomUserResult>(relaxed = true) {
+            every { results } returns
+                    listOf(
+                        mockk<User>() {
+                            every { name } returns mockk<Name>() {
+                                every { title } returns "Mister"
+                                every { first } returns "Billy"
+                                every { last } returns "Joe"
+                            }
+                            every { email } returns "Billy@Joe.com"
+                        }
+                    )
+
         }
     }
 
