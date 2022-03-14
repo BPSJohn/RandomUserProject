@@ -63,4 +63,41 @@ class MainViewModelTest {
             TestCall.createSuccessfulTestCallUserResponse().data?.results?.get(0)?.name?.title, mainViewModelTest.randomUserFeed.value?.results?.get(0)?.name?.title
         )
     }
+
+    @Test
+    fun getUsersShouldReturnSuccessfully() = runBlockingTest {
+        coEvery { testRepo.fetchUsers() } returns TestCall.createSuccessfulTestCallUsersResponse()
+
+        mainViewModelTest.getUsers()
+
+        assertEquals(
+            5, mainViewModelTest.randomUsersFeed.value?.results?.size
+        )
+    }
+
+    @Test
+    fun updateUserShouldUpdateSuccessfully() = runBlockingTest {
+        coEvery { testRepo.fetchUser() } returns TestCall.createSuccessfulTestCallUserResponse()
+
+        mainViewModelTest.getUser()
+        val testUser = TestCall.createUserResult()
+        mainViewModelTest.updateUser(testUser)
+
+        assertEquals(
+            testUser.results.get(0).name?.first, mainViewModelTest.randomUserFeed.value?.results?.get(0)?.name?.first
+        )
+
+    }
+
+    @Test
+    fun saveUserShouldRemoveSensitiveData() = runBlockingTest {
+        coEvery { testRepo.fetchUser() } returns TestCall.createSuccessfulTestCallUserResponse()
+
+        mainViewModelTest.getUser()
+        val testUser = mainViewModelTest.saveUser()
+
+        assertEquals(
+            testUser?.results?.get(0)?.login?.password, mainViewModelTest.randomUserFeed.value?.results?.get(0)?.login?.password
+        )
+    }
 }

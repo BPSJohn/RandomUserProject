@@ -1,4 +1,6 @@
-package com.example.random.random.user.ui.location
+package com.example.random.random.user.utils
+
+import kotlin.math.roundToInt
 
 // https://stackoverflow.com/a/3694410/2503185
 // Example: distance(32.9697, -96.80322, 29.46786, -98.53506, 'M')
@@ -9,7 +11,7 @@ class DistanceHelper {
         lat2: Double,
         lon2: Double,
         unit: Char
-    ): Double {
+    ): Int {
         val theta = lon1 - lon2
         var dist =
             Math.sin(deg2rad(lat1)) *
@@ -24,7 +26,7 @@ class DistanceHelper {
         } else if (unit == 'N') {
             dist = dist * 0.8684
         }
-        return dist
+        return dist.roundToInt()
     }
 
     private fun deg2rad(deg: Double): Double {

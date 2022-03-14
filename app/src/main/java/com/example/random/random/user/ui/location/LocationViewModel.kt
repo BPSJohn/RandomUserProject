@@ -3,6 +3,7 @@ package com.example.random.random.user.ui.location
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import com.example.random.random.user.network.data.User
+import com.example.random.random.user.utils.DistanceHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
